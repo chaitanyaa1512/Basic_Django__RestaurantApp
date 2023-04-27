@@ -25,7 +25,7 @@ Hence, this architecture helps your project to be highly secure.
 4.Import os in settings.py
 5.Include template path in settings.py 
 synatx:'DIRS': [os.path.join(BASE_DIR,'templates')],
-________________________________________________________________
+------------------------------------------------------------
 -render function sends both static as well as dynamic data
 -Logic Creation:
 1.Class based view
