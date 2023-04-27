@@ -9,6 +9,7 @@ contains byte code(binary code)
 
 -mysite is base directory or root directory
 
+-----------------------------------------------------
 Django uses MVT architecture(Model View Template)
 URL-path of entire project
 Model-communicates with database
@@ -25,9 +26,11 @@ Hence, this architecture helps your project to be highly secure.
 4.Import os in settings.py
 5.Include template path in settings.py 
 synatx:'DIRS': [os.path.join(BASE_DIR,'templates')],
+
 ------------------------------------------------------------
 -render function sends both static as well as dynamic data
 -Logic Creation:
 1.Class based view
 2.Function based views
+
 --------------------------------------------------------------
