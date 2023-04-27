@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <div class="Orders">
+            <h4>Orders</h4>
+        <form action="Orderdata" method='POST'>
+          {% csrf_token %}
+          <label for="F_name">Food name:</label><br><br>
+          <input type="text" id="lname" name="Food_Name" ><br><br>
+          <label for="F_price">Food Price:</label><br><br>
+          <input type="text" id="lname" name="Food_Price" ><br><br>
+          <label for="T_Name">Name of Table:</label><br><br>
+          <input type="text" id="tname" name="Name_Table" ><br><br>
+          <label for="W_Name">Name of Waiter:</label><br><br>
+          <input type="text" id="wname" name="Name_Waiter" ><br><br>
+          <input type="submit" value="Submit"><br>
+       
+          <p>Click here to Submit.</p>
+          
+          <style>
+            table, th, td {
+            border:1px solid black;
+            width:10px;
+            height:20px;
+          }
+          
+          </style> 
+          
+          <table style="width:50%">
+            <tr>
+                <th>Food Name</th>
+                <th>Food Price</th>
+                <th>Name Of Table</th>
+                <th>Name Of Waiter</th>
+            </tr>
+            {% for x in objorder %}
+            <tr>
+              <td>{{x.foodName}}</td>
+              <td>{{x.foodPrice}}</td>
+              <td>{{x.nameOfTable}}</td>
+              <td>{{x.nameOfWaiter}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </form>
+        {{message}}
+      </div>
+        
+      
+          
+          
+          
+</body>
+</html>
+
+
+       

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div class="Food">
+    
+            <h1>Food</h1>
+            <form action="Fooddata" method='POST'>
+              {% csrf_token %}
+              <label for="F_name">Food Name:</label><br><br>
+              <input type="text" id="fname" name="Food_Name" ><br><br>
+              <label for="F_charge">Food Charge:</label><br><br>
+              <input type="text" id="fcharge" name="Food_Charge" ><br><br>
+              <input type="submit" value="Submit"><br>
+             
+               <p>Click here to Submit.</p>
+              <style>
+                table, th, td {
+                border:1px solid black;
+                width:10px;
+                height:20px;
+              }
+             
+              </style> 
+              
+              <table style="width:50%">
+                <tr>
+                  <th>Food Name</th>
+                  <th>Food Charge</th>
+                </tr>
+                {% for x in objfood %}
+                <tr>
+                  <td>{{x.mainStreamFoodName}}</td>
+                  <td>{{x.subCategoryFoodCharge}}</td>
+                </tr>
+                {% endfor %}
+              </table>
+            </form>
+            {{message}}
+          </div>
+        </body>
+        </html>

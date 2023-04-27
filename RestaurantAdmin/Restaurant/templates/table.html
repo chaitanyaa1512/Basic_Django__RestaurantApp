@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+    <body>
+        <div class="Tables">
+        <h2>Tables</h2>
+        <form action="Tabledata" method='POST'>
+          {% csrf_token %} 
+          <label for="T_Name">Table Name:</label><br><br>
+          <input type="text" id="tname" name="Table_Name" ><br><br>
+          <input type="submit" value="Submit"><br>
+        
+          <p>Click here to Submit.</p>
+          <style>
+            table, th, td {
+            border:1px solid black;
+            width:10px;
+            height:20px;
+          }
+          
+          </style>
+          
+          <table style="width:50%">
+            <tr>
+              <th>Table Name</th>
+            </tr>
+            {% for x in objtable %}
+            <tr>
+              <td>{{x.tableName}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </form>
+        {{message}}
+       </div>
+    </body>
+    <html>
+          
+          

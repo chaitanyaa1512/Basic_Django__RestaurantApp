@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <body>
+ <h1>RESTAURANT</h1>
+<p><a href="food">FOOD</a></p>
+<p><a href="table">TABLES</a></p>
+<p><a href="waiter">WAITERS</a></p>
+<p><a href="order">ORDERS</a></p>
+  </body>
+  </html> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {% comment %} <style>
+  table, th, td {
+    border:3px  black;
+  }
+</style>
+<body>
+    <div class="food">
+    
+        <h1>Food</h1>
+        <form action="Fooddata" method='POST'>
+          {% csrf_token %}
+          <label for="F_name">Food Name:</label><br><br>
+          <input type="text" id="fname" name="Food_Name" ><br><br>
+          <label for="F_charge">Food Charge:</label><br><br>
+          <input type="text" id="fcharge" name="Food_Charge" ><br><br>
+          <input type="submit" value="Submit"><br>
+         
+           <p>Click here to Submit.</p>
+          <style>
+            table, th, td {
+            border:1px solid black;
+            width:10px;
+            height:20px;
+          }
+         
+          </style> 
+          
+          <table style="width:50%">
+            <tr>
+              <th>Food Name</th>
+              <th>Food Charge</th>
+            </tr>
+            {% for x in objfood %}
+            <tr>
+              <td>{{x.mainStreamFoodName}}</td>
+              <td>{{x.subCategoryFoodCharge}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </form>
+        {{message}}
+      </div>
+      
+        
+          
+        
+        
+<h2>Tables</h2>
+        <form action="Tabledata" method='POST'>
+          {% csrf_token %} 
+          <label for="T_Name">Table Name:</label><br><br>
+          <input type="text" id="tname" name="Table_Name" ><br><br>
+          <input type="submit" value="Submit"><br>
+        
+          <p>Click here to Submit.</p>
+          <style>
+            table, th, td {
+            border:1px solid black;
+            width:10px;
+            height:20px;
+          }
+          
+          </style>
+          
+          <table style="width:50%">
+            <tr>
+              <th>Table Name</th>
+            </tr>
+            {% for x in objtable %}
+            <tr>
+              <td>{{x.tableName}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </form>
+        {{message}}
+       </div>
+      
+          
+          
+         
+          
+        
+        <h3>Waiters</h3>
+        <form action="Waiterdata" method='POST'>
+          {% csrf_token %}
+          <label for="W_Name">Waiter Name:</label><br><br>
+          <input type="text" id="wname" name="Waiter_Name" ><br><br>
+          <input type="submit" value="Submit"><br>
+         
+          <p>Click here to Submit.</p>
+          
+          <style>
+            table, th, td {
+            border:1px solid black;
+            width:10px;
+            height:20px;
+          }
+        
+          </style> 
+       
+          <table style="width:50%">
+            <tr>
+              <th>Waiter Name</th>
+            </tr>
+            {% for x in objwaiter %}
+            <tr>
+              <td>{{x.waiterName}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </form>
+        {{message}}
+      </div>
+    
+        
+      
+          
+          
+         
+          
+        
+        
+        <h4>Orders</h4>
+        <form action="Orderdata" method='POST'>
+          {% csrf_token %}
+          <label for="F_name">Food name:</label><br><br>
+          <input type="text" id="lname" name="Food_Name" ><br><br>
+          <label for="F_price">Food Price:</label><br><br>
+          <input type="text" id="lname" name="Food_Price" ><br><br>
+          <label for="T_Name">Name of Table:</label><br><br>
+          <input type="text" id="tname" name="Name_Table" ><br><br>
+          <label for="W_Name">Name of Waiter:</label><br><br>
+          <input type="text" id="wname" name="Name_Waiter" ><br><br>
+          <input type="submit" value="Submit"><br>
+       
+          <p>Click here to Submit.</p>
+          
+          <style>
+            table, th, td {
+            border:1px solid black;
+            width:10px;
+            height:20px;
+          }
+          
+          </style> 
+          
+          <table style="width:50%">
+            <tr>
+                <th>Food Name</th>
+                <th>Food Price</th>
+                <th>Name Of Table</th>
+                <th>Name Of Waiter</th>
+            </tr>
+            {% for x in objorder %}
+            <tr>
+              <td>{{x.mainStreamFoodName}}</td>
+              <td>{{x.subCategoryFoodCharge}}</td>
+              <td>{{x.tableName}}</td>
+              <td>{{x.waiterName}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+        </form>
+        {{message}}
+      </div>
+        
+      
+          
+          
+          
+</body>
+</html>
+
+
+    {% endcomment %}
